@@ -1,0 +1,1 @@
+Just a handful of implementation problems from Skiena's "Algorithm Design Manual"
