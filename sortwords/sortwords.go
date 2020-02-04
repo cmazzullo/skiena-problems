@@ -8,23 +8,21 @@
 // sequence to identify one instance of each distinct word. Write a brief
 // report with your conclusions.
 
-package main
+package sortwords
 
-import (
-	"fmt"
-	"os"
-	"bufio"
-	"strings"
-)
 
-func main() {
-	var words []string
-	input := bufio.NewScanner(os.Stdin)
-	for input.Scan() {  // for each line of input
-		// split lines around whitespace:
-		for _, v := range strings.Fields(input.Text()) {
-			words = append(words, v)
+func Swap(a *[5]string, i, j int) {
+	temp := a[i]
+	a[i] = a[j]
+	a[j] = temp
+}
+
+func InsertionSort(a *[5]string) {
+	for i := 0; i < len(a)-1; i++ {
+		for j := i; j < len(a); j++ {
+			if a[j] < a[i] {
+				Swap(a, i, j)
+			}
 		}
 	}
-	fmt.Printf("%v", words)
 }
