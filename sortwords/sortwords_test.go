@@ -7,7 +7,7 @@ import (
 
 
 
-var expected = [5]string{
+var expected = [...]string{
 	"cows",
 	"cows",
 	"fight",
@@ -16,7 +16,7 @@ var expected = [5]string{
 }
 
 func TestInsertionSort(t *testing.T) {
-	var input = [5]string{
+	var input = [...]string{
 		"only",
 		"cows",
 		"fight",
@@ -31,9 +31,9 @@ func TestInsertionSort(t *testing.T) {
 
 
 func TestSwap(t *testing.T) {
-	a := [5]string{"one", "two", "three", "four", "five"}
+	a := [...]string{"one", "two", "three", "four", "five"}
 	Swap(&a, 2, 4)
-	expected := [5]string{"one", "two", "five", "four", "three"}
+	expected := [...]string{"one", "two", "five", "four", "three"}
 	if a != expected {
 		t.Errorf("Problem with Swap: %v", a)
 	}

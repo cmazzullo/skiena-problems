@@ -10,7 +10,6 @@
 
 package sortwords
 
-
 func Swap(a *[5]string, i, j int) {
 	temp := a[i]
 	a[i] = a[j]
